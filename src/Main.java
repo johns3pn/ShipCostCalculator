@@ -1,13 +1,43 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+public class Main {
+    public static void main(String[] args) {
+
+        // Declare variables
+        // Prompt user for item price
+        // Read item price
+        // If item price is 100 or more shipping is free
+        // Otherwise shipping is 2% of item price
+        // Calculate total price
+        // Display shipping cost
+        // Display total price
+
+        Scanner in = new Scanner(System.in);
+
+        double itemPrice;
+        double shippingCost;
+        double totalPrice;
+
+        System.out.print("Enter item price: ");
+
+        if (in.hasNextDouble()) {
+            itemPrice = in.nextDouble();
+            in.nextLine();
+
+            if (itemPrice >= 100) {
+                shippingCost = 0;
+            } else {
+                shippingCost = itemPrice * 0.02;
+            }
+
+            totalPrice = itemPrice + shippingCost;
+
+            System.out.println("Shipping Cost: $" + shippingCost);
+            System.out.println("Total Price: $" + totalPrice);
+        } else {
+            System.out.println("Invalid input.");
+        }
     }
 }
